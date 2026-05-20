@@ -5,5 +5,6 @@
   tasks:
     - name: Show Date
       command: date
-    - name: Show date again
-      command: date
+    - name: Show uptime
+      command: uptime
+
