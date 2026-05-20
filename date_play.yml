@@ -1,0 +1,9 @@
+-
+
+  name: Date Playbook
+  hosts: servers
+  tasks:
+    - name: Show Date
+      command: date
+    - name: Show date again
+      command: date
