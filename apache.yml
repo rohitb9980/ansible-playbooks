@@ -1,0 +1,27 @@
+---
+- name: Install Apache on webservers
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: latest
+        update_cache: yes
+
+    - name: Deploy Apache Config
+      copy:
+        src: files/httpd.conf
+        dest: /etc/apache2/apache2.conf
+
+- name: Install PostgreSQL on database servers
+  hosts: database
+  become: yes
+
+  tasks:
+    - name: Install PostgreSQL
+      apt:
+        name: postgresql
+        state: latest
+        update_cache: yes
